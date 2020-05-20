@@ -80,6 +80,10 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git git-auto-fetch fasd)
 
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+  plugins+=(zsh-iterm-touchbar)
+fi
+
 source "$ZSH"/oh-my-zsh.sh
 
 # User configuration
@@ -111,3 +115,7 @@ fi
 alias j='fasd_cd -d'
 alias v='f -e vim -b viminfo'
 alias o='f -e xdg-open'
+
+if [[ "$OSTYPE" =~ "darwin" && -f ~/.iterm2_shell_integration.zsh ]]; then
+  source ~/.iterm2_shell_integration.zsh
+fi

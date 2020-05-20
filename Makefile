@@ -2,6 +2,7 @@ install:
 	cp zshrc ~/.zshrc
 	cp fasdrc ~/.fasdrc
 	cp p10k.zsh ~/.p10k.zsh
+	cp iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
 
 deps: oh-my-zsh powerlevel10k
 
