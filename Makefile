@@ -1,5 +1,6 @@
 install:
 	cp zshrc ~/.zshrc
+	cp fasdrc ~/.fasdrc
 
 deps: oh-my-zsh
 

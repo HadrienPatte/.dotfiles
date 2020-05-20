@@ -68,7 +68,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-auto-fetch)
+plugins=(git git-auto-fetch fasd)
 
 source "$ZSH"/oh-my-zsh.sh
 
@@ -96,3 +96,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# fasd aliases
+alias j='fasd_cd -d'
+alias v='f -e vim -b viminfo'
+alias o='f -e xdg-open'
