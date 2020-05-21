@@ -111,11 +111,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# fasd aliases
-alias j='fasd_cd -d'
-alias v='f -e vim -b viminfo'
-alias o='f -e xdg-open'
-
 if [[ "$OSTYPE" =~ "darwin" && -f ~/.iterm2_shell_integration.zsh ]]; then
   source ~/.iterm2_shell_integration.zsh
 fi
