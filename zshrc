@@ -9,7 +9,12 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/bin:${PATH}"
+
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+  # Prefer GNU binaries to Macintosh binaries.
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:${PATH}"
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME"/.oh-my-zsh
