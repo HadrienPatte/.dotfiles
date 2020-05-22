@@ -4,6 +4,9 @@ install:
 	cp p10k.zsh ~/.p10k.zsh
 	cp aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 	cp iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
+	cp gitconfig ~/.gitconfig
+	cp gitconfig-mac ~/.gitconfig-mac
+	cp gitconfig-linux ~/.gitconfig-linux
 
 deps: oh-my-zsh powerlevel10k
 

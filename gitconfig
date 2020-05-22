@@ -1,0 +1,33 @@
+[user]
+	name = Hadrien Patte
+
+[commit]
+	gpgSign = true
+
+[fetch]
+	prune = true
+
+[alias]
+	a = add
+	c = commit
+	s = status
+	ck = checkout
+	f = fetch
+
+[gpg]
+	program = gpg
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[core]
+	pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+
+[interactive]
+	diffFilter = delta --color-only
+
+[includeIf "gitdir:/Users/"]
+	path = ~/.gitconfig-mac
+
+[includeIf "gitdir:/home/"]
+	path = ~/.gitconfig-linux
