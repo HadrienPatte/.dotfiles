@@ -4,6 +4,9 @@
 [commit]
 	gpgSign = true
 
+[tag]
+	forceSignAnnotated = true
+
 [fetch]
 	prune = true
 
