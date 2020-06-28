@@ -158,6 +158,9 @@ autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab co
 " Format go files on save
 autocmd BufWritePost *.go silent !goimports -w <afile>
 
+" Display hidden files in NerdTree by default
+let NERDTreeShowHidden=1
+
 " Load COC configuration
 try
     source ~/.coc.vim
