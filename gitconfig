@@ -10,6 +10,9 @@
 [fetch]
 	prune = true
 
+[pull]
+	ff = only
+
 [alias]
 	a = add
 	c = commit
