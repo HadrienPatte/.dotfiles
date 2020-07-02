@@ -11,16 +11,16 @@ install:
 	cp coc.vim ~/.coc.vim
 
 diff:
-	diff zshrc ~/.zshrc
-	diff fasdrc ~/.fasdrc
-	diff p10k.zsh ~/.p10k.zsh
-	diff aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
-	diff iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
-	diff gitconfig ~/.gitconfig
-	diff gitconfig-mac ~/.gitconfig-mac
-	diff gitconfig-linux ~/.gitconfig-linux
-	diff vimrc ~/.vimrc
-	diff coc.vim ~/.coc.vim
+	-diff zshrc ~/.zshrc
+	-diff fasdrc ~/.fasdrc
+	-diff p10k.zsh ~/.p10k.zsh
+	-diff aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+	-diff iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
+	-diff gitconfig ~/.gitconfig
+	-diff gitconfig-mac ~/.gitconfig-mac
+	-diff gitconfig-linux ~/.gitconfig-linux
+	-diff vimrc ~/.vimrc
+	-diff coc.vim ~/.coc.vim
 
 deps: oh-my-zsh powerlevel10k vim-plugins
 
