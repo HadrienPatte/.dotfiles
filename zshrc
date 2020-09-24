@@ -13,7 +13,7 @@ export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/bin:${PATH}"
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
   # Prefer GNU binaries to Macintosh binaries.
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:${PATH}"
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/make/libexec/gnubin:${PATH}"
 fi
 
 # Path to your oh-my-zsh installation.
