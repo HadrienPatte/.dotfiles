@@ -104,7 +104,7 @@ if [ -x "$(command -v vim)" ]; then
   EDITOR=$VISUAL
 fi
 
-if [ -x "$(command -v az)" && -f /usr/local/etc/bash_completion.d/az ]; then
+if [[ -x "$(command -v az)" && -f /usr/local/etc/bash_completion.d/az ]]; then
   source /usr/local/etc/bash_completion.d/az
 fi
 
