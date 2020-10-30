@@ -151,9 +151,13 @@ if has("autocmd")
 endif
 
 
+autocmd Filetype c,cc,h setlocal tabstop=2 shiftwidth=2 softtabstop=4 expandtab
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab copyindent preserveindent
 autocmd Filetype python,bazel,bzl setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd Filetype yaml,yml setlocal tabstop=2 shiftwidth=2 softtabstop=4 expandtab
-autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=0 noexpandtab copyindent preserveindent
+
+" Format C/C++ files on save
+autocmd BufWritePost *.c,*.cc,*.h silent !clang-format -i <afile>
 
 " Format go files on save
 autocmd BufWritePost *.go silent !goimports -w <afile>
