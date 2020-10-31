@@ -75,6 +75,12 @@ ENABLE_CORRECTION="true"
 # see 'man strftime' for details.
 HIST_STAMPS="yyyy-mm-dd"
 
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
+
+setopt inc_append_history
+setopt share_history
+
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
