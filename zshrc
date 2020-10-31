@@ -118,6 +118,10 @@ if [[ -x "$(command -v az)" && -f /usr/local/etc/bash_completion.d/az ]]; then
   source /usr/local/etc/bash_completion.d/az
 fi
 
+if [[ -x "$(command -v tfenv)" || -x "$(command -v terraform)" ]]; then
+  complete -o nospace -C /usr/local/bin/terraform terraform
+fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
