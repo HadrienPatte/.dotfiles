@@ -163,7 +163,7 @@ autocmd BufWritePost *.c,*.cc,*.h silent !clang-format -i <afile>
 autocmd BufWritePost *.go silent !goimports -w <afile>
 
 " Format terraform files on save
-autocmd BufWritePost *.tf silent !terraform fmt <afile>
+autocmd BufWritePost *.tf,*.tfvars silent !terraform fmt <afile>
 
 " Display hidden files in NerdTree by default
 let NERDTreeShowHidden=1
