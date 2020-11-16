@@ -9,6 +9,8 @@ install:
 	cp gitconfig-linux ~/.gitconfig-linux
 	cp vimrc ~/.vimrc
 	cp coc.vim ~/.coc.vim
+	mkdir -p ~/.terraform.d/plugin-cache
+	cp terraformrc ~/.terraformrc
 
 diff:
 	-diff zshrc ~/.zshrc
@@ -21,6 +23,7 @@ diff:
 	-diff gitconfig-linux ~/.gitconfig-linux
 	-diff vimrc ~/.vimrc
 	-diff coc.vim ~/.coc.vim
+	-diff terraformrc ~/.terraformrc
 
 deps: oh-my-zsh powerlevel10k vim-plugins
 
