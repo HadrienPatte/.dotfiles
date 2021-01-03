@@ -1,5 +1,5 @@
 # grep aliases
-alias grep='grep --color=auto'
+alias grep='grep --color=auto --exclude-dir=.git'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
