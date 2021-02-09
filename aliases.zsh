@@ -25,6 +25,12 @@ alias o='f -e xdg-open'
 alias e='exit'
 alias ssu='sudo -sE'
 alias h='history'
-alias s='git status'
-alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset" --abbrev-commit'
+alias tf='terraform'
+
+# Git aliases
 alias g='git'
+alias s='git status'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset" --abbrev-commit'
+
