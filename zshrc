@@ -94,6 +94,7 @@ plugins=(
   git-auto-fetch
   fasd
   colored-man-pages
+  direnv
 )
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
