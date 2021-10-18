@@ -24,6 +24,10 @@
 	ck = checkout
 	f = fetch
 
+[color.grep]
+	filename = magenta
+	linenumber = green
+
 [gpg]
 	program = gpg
 
