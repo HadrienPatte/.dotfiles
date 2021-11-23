@@ -15,7 +15,7 @@
 
 [push]
 	default = current
-    gpgSign = if-asked
+	gpgSign = if-asked
 
 [alias]
 	a = add
