@@ -101,6 +101,10 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
   plugins+=(zsh-iterm-touchbar)
 fi
 
+if [ -x "$(command -v brew)" ]; then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+fi
+
 source "$ZSH"/oh-my-zsh.sh
 
 # User configuration
