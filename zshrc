@@ -12,8 +12,25 @@ fi
 export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/bin:${PATH}"
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
+
+  if [ -x "$(command -v brew)" ]; then
+    export HOMEBREW_DIR="$(brew --prefix)"
+
+    export FPATH="${HOMEBREW_DIR}/share/zsh/site-functions:${FPATH}"
+
+    # Force certain more-secure behaviors from homebrew
+    export HOMEBREW_NO_INSECURE_REDIRECT=1
+    export HOMEBREW_CASK_OPTS=--require-sha
+  fi
+
   # Prefer GNU binaries to Macintosh binaries.
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/make/libexec/gnubin:${PATH}"
+  export PATH="${HOMEBREW_DIR}/bin:${PATH}"
+  export PATH="${HOMEBREW_DIR}/sbin:${PATH}"
+  export PATH="${HOMEBREW_DIR}/opt/coreutils/libexec/gnubin:${PATH}"
+  export PATH="${HOMEBREW_DIR}/opt/grep/libexec/gnubin:${PATH}"
+  export PATH="${HOMEBREW_DIR}/opt/gnu-sed/libexec/gnubin:${PATH}"
+  export PATH="${HOMEBREW_DIR}/opt/make/libexec/gnubin:${PATH}"
+  export PATH="${HOMEBREW_DIR}/opt/awscli@1/bin:${PATH}"
 fi
 
 # Path to your oh-my-zsh installation.
@@ -97,15 +114,7 @@ plugins=(
   direnv
 )
 
-if [[ "$OSTYPE" =~ "darwin" ]]; then
-  plugins+=(zsh-iterm-touchbar)
-fi
-
-if [ -x "$(command -v brew)" ]; then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-fi
-
-source "$ZSH"/oh-my-zsh.sh
+source "${ZSH}/oh-my-zsh.sh"
 
 # User configuration
 
@@ -124,12 +133,12 @@ if [ -x "$(command -v aws)" ]; then
   plugins+=(aws)
 fi
 
-if [[ -x "$(command -v az)" && -f /usr/local/etc/bash_completion.d/az ]]; then
-  source /usr/local/etc/bash_completion.d/az
+if [[ -x "$(command -v az)" && -f ${HOMEBREW_DIR}/etc/bash_completion.d/az ]]; then
+  source ${HOMEBREW_DIR}/etc/bash_completion.d/az
 fi
 
 if [[ -x "$(command -v tfenv)" || -x "$(command -v terraform)" ]]; then
-  complete -o nospace -C /usr/local/bin/terraform terraform
+  complete -o nospace -C ${HOMEBREW_DIR}/bin/terraform terraform
 fi
 
 # Compilation flags
@@ -148,6 +157,8 @@ if [[ "$OSTYPE" =~ "darwin" && -f ~/.iterm2_shell_integration.zsh ]]; then
   source ~/.iterm2_shell_integration.zsh
 fi
 
-# Force certain more-secure behaviors from homebrew
-export HOMEBREW_NO_INSECURE_REDIRECT=1
-export HOMEBREW_CASK_OPTS=--require-sha
+
+export GOPATH="${HOME}/go"
+
+# Add binaries that are go install-ed to PATH
+export PATH="${GOPATH}/bin:${PATH}"
