@@ -33,4 +33,3 @@ alias s='git status'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset" --abbrev-commit'
-

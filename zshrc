@@ -13,24 +13,32 @@ export PATH="${HOME}/bin:${HOME}/.local/bin:/usr/local/bin:${PATH}"
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
 
-  if [ -x "$(command -v brew)" ]; then
-    export HOMEBREW_DIR="$(brew --prefix)"
+  case $(uname -p) in
+    "arm")
+      export HOMEBREW_DIR="/opt/homebrew"
+    ;;
 
+    "i386")
+      export HOMEBREW_DIR="/usr/local"
+    ;;
+  esac
+
+  if [ -x "$(command -v ${HOMEBREW_DIR}/bin/brew)" ]; then
     export FPATH="${HOMEBREW_DIR}/share/zsh/site-functions:${FPATH}"
 
     # Force certain more-secure behaviors from homebrew
     export HOMEBREW_NO_INSECURE_REDIRECT=1
     export HOMEBREW_CASK_OPTS=--require-sha
-  fi
 
-  # Prefer GNU binaries to Macintosh binaries.
-  export PATH="${HOMEBREW_DIR}/bin:${PATH}"
-  export PATH="${HOMEBREW_DIR}/sbin:${PATH}"
-  export PATH="${HOMEBREW_DIR}/opt/coreutils/libexec/gnubin:${PATH}"
-  export PATH="${HOMEBREW_DIR}/opt/grep/libexec/gnubin:${PATH}"
-  export PATH="${HOMEBREW_DIR}/opt/gnu-sed/libexec/gnubin:${PATH}"
-  export PATH="${HOMEBREW_DIR}/opt/make/libexec/gnubin:${PATH}"
-  export PATH="${HOMEBREW_DIR}/opt/awscli@1/bin:${PATH}"
+    # Prefer GNU binaries to Macintosh binaries.
+    export PATH="${HOMEBREW_DIR}/bin:${PATH}"
+    export PATH="${HOMEBREW_DIR}/sbin:${PATH}"
+    export PATH="${HOMEBREW_DIR}/opt/coreutils/libexec/gnubin:${PATH}"
+    export PATH="${HOMEBREW_DIR}/opt/grep/libexec/gnubin:${PATH}"
+    export PATH="${HOMEBREW_DIR}/opt/gnu-sed/libexec/gnubin:${PATH}"
+    export PATH="${HOMEBREW_DIR}/opt/make/libexec/gnubin:${PATH}"
+    export PATH="${HOMEBREW_DIR}/opt/awscli@1/bin:${PATH}"
+  fi
 fi
 
 # Path to your oh-my-zsh installation.
