@@ -120,6 +120,7 @@ plugins=(
   fasd
   colored-man-pages
   direnv
+  virtualenvwrapper
 )
 
 source "${ZSH}/oh-my-zsh.sh"
