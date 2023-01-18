@@ -36,8 +36,6 @@
 	insteadOf = https://github.com/
 
 [core]
-	fsmonitor = true
-	untrackedCache = true
 	pager = delta
 
 [interactive]
