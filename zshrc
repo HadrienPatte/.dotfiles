@@ -34,6 +34,7 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
     export PATH="${HOMEBREW_DIR}/bin:${PATH}"
     export PATH="${HOMEBREW_DIR}/sbin:${PATH}"
     export PATH="${HOMEBREW_DIR}/opt/coreutils/libexec/gnubin:${PATH}"
+    export PATH="${HOMEBREW_DIR}/opt/findutils/libexec/gnubin:${PATH}"
     export PATH="${HOMEBREW_DIR}/opt/grep/libexec/gnubin:${PATH}"
     export PATH="${HOMEBREW_DIR}/opt/gnu-sed/libexec/gnubin:${PATH}"
     export PATH="${HOMEBREW_DIR}/opt/make/libexec/gnubin:${PATH}"
