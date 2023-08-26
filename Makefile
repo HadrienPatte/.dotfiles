@@ -26,13 +26,16 @@ diff:
 	-diff myspacevim.vim ~/.SpaceVim.d/autoload/myspacevim.vim
 	-diff terraformrc ~/.terraformrc
 
-deps: oh-my-zsh powerlevel10k spacevim
+deps: oh-my-zsh powerlevel10k zsh-autosuggestions spacevim
 
 oh-my-zsh:
 	@git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
 
 powerlevel10k:
 	@git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+
+zsh-autosuggestions:
+	@git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
 spacevim:
 	@curl -sLf https://spacevim.org/install.sh | bash

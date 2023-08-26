@@ -123,6 +123,7 @@ plugins=(
   direnv
   virtualenvwrapper
   command-not-found
+  zsh-autosuggestions
 )
 
 source "${ZSH}/oh-my-zsh.sh"
