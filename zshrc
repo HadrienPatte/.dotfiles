@@ -118,7 +118,6 @@ setopt share_history
 plugins=(
   git
   git-auto-fetch
-  fasd
   colored-man-pages
   direnv
   virtualenvwrapper
@@ -169,6 +168,7 @@ if [[ "$OSTYPE" =~ "darwin" && -f ~/.iterm2_shell_integration.zsh ]]; then
   source ~/.iterm2_shell_integration.zsh
 fi
 
+eval "$(zoxide init zsh --cmd j)"
 
 export GOPATH="${HOME}/go"
 

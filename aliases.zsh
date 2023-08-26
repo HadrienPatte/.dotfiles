@@ -16,16 +16,12 @@ alias k='kubectl'
 alias kn='kubens'
 alias kx='kubectx'
 
-# fasd aliases
-alias j='fasd_cd -d'
-alias v='f -e vim -b viminfo'
-alias o='f -e xdg-open'
-
 # Misc aliases
 alias e='exit'
 alias ssu='sudo -sE'
 alias h='history'
 alias tf='terraform'
+alias o='f -e xdg-open'
 
 # Git aliases
 alias g='git'

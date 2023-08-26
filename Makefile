@@ -1,6 +1,5 @@
 install:
 	cp zshrc ~/.zshrc
-	cp fasdrc ~/.fasdrc
 	cp p10k.zsh ~/.p10k.zsh
 	cp aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 	cp iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
@@ -15,7 +14,6 @@ install:
 
 diff:
 	-diff zshrc ~/.zshrc
-	-diff fasdrc ~/.fasdrc
 	-diff p10k.zsh ~/.p10k.zsh
 	-diff aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 	-diff iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
