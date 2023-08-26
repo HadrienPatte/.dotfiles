@@ -43,7 +43,7 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME"/.oh-my-zsh
+export ZSH="${HOME}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -136,20 +136,20 @@ source "${ZSH}/oh-my-zsh.sh"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [ -x "$(command -v vim)" ]; then
+if (( $+commands[vim] )); then
   VISUAL=vim
   EDITOR=$VISUAL
 fi
 
-if [ -x "$(command -v aws)" ]; then
+if (( $+commands[aws] )); then
   plugins+=(aws)
 fi
 
-if [[ -x "$(command -v az)" && -f ${HOMEBREW_DIR}/etc/bash_completion.d/az ]]; then
+if [[ $+commands[az] && -f ${HOMEBREW_DIR}/etc/bash_completion.d/az ]]; then
   source ${HOMEBREW_DIR}/etc/bash_completion.d/az
 fi
 
-if [[ -x "$(command -v tfenv)" || -x "$(command -v terraform)" ]]; then
+if (( $+commands[tfenv] || $+commands[terraform] )); then
   complete -o nospace -C ${HOMEBREW_DIR}/bin/terraform terraform
 fi
 
