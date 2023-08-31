@@ -61,11 +61,10 @@ function! myspacevim#after() abort
   autocmd Filetype python,bazel,bzl setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
   autocmd Filetype yaml,yml setlocal tabstop=2 shiftwidth=2 softtabstop=4 expandtab
 
-  " By default, Vim associates .tf files with TinyFugue - tell it not to.
-  silent! autocmd! filetypedetect BufRead,BufNewFile *.tf
-  autocmd BufRead,BufNewFile *.tf,*.tfvars,.terraformrc,terraform.rc set filetype=terraform
-  autocmd BufRead,BufNewFile *.tfstate,*.tfstate.backup set filetype=json
-
   " Enable trimmming of trailing whitespace
   let g:neoformat_basic_format_trim = 1
+
+  " vim-terraform options
+  let g:terraform_fmt_on_save=1
+  let g:terraform_align=1
 endfunction

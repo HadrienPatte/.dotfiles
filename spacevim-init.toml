@@ -43,3 +43,6 @@
 
 [[layers]]
   name = "incsearch"
+
+[[custom_plugins]]
+  repo = "hashivim/vim-terraform"
