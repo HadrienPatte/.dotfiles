@@ -11,7 +11,7 @@ alias l='ls -CF'
 
 # Kubernetes aliases
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
 alias k='kubectl'
 alias kn='kubens'
 alias kx='kubectx'
