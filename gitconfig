@@ -15,7 +15,7 @@
 
 [push]
 	default = current
-    autoSetupRemote = true
+	autoSetupRemote = true
 	gpgSign = if-asked
 
 [alias]
@@ -37,13 +37,20 @@
 
 [core]
 	pager = delta
-    hooksPath = ~/.dotfiles/git-hooks
+	hooksPath = ~/.dotfiles/git-hooks
 
 [interactive]
 	diffFilter = delta --color-only
 
 [delta]
 	navigate = true  # use n and N to move between diff sections
+
+[rerere]
+	enabled = true
+	autoUpdate = true
+
+[rebase]
+	updateRefs = true
 
 [merge]
 	updateRefs = true
