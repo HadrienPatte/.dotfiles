@@ -1,0 +1,19 @@
+for remote in $(git remote); do
+    remote_url=$(git remote get-url $remote)
+
+    if [ "${remote_url#git@}" != "${remote_url}" ]; then
+        # git URL
+        org_name=$(echo "$remote_url" | cut -d ":" -f 2 | cut -d "/" -f 1)
+    elif [ "${remote_url#ssh://}" != "${remote_url}" ] || [ "${remote_url#http://}" != "${remote_url}" ]; then
+        # SSH or HTTPS URL
+        org_name=$(echo "$remote_url" | cut -d "/" -f 4)
+    else
+        continue
+    fi
+
+    if [ "$remote" != "$org_name" ]; then
+        echo "Renaming remote $remote to $org_name"
+        git remote rename $remote $org_name
+    fi
+
+done
