@@ -5,3 +5,6 @@
 [core]
 	fsmonitor = true
 	untrackedCache = true
+
+[remote]
+	pushDefault = DataDog

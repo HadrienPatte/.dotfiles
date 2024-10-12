@@ -1,3 +1,6 @@
 [user]
 	email = hadrien.patte@protonmail.com
 	signingkey = 48FC810A007817B48FABC611FEACD3B5FB500BB0
+
+[remote]
+	pushDefault = HadrienPatte
