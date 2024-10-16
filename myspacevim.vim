@@ -61,7 +61,7 @@ function! myspacevim#after() abort
   autocmd Filetype python,bazel,bzl setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
   autocmd Filetype yaml,yml setlocal tabstop=2 shiftwidth=2 softtabstop=4 expandtab
 
-  " Enable trimmming of trailing whitespace
+  " Enable trimming of trailing whitespace
   let g:neoformat_basic_format_trim = 1
 
   " vim-terraform options
