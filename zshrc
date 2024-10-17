@@ -143,8 +143,12 @@ if (( $+commands[aws] )); then
   plugins+=(aws)
 fi
 
-if [[ $+commands[az] && -f ${HOMEBREW_DIR}/etc/bash_completion.d/az ]]; then
-  source ${HOMEBREW_DIR}/etc/bash_completion.d/az
+if (( $+commands[az] )); then
+  plugins+=(azure)
+fi
+
+if (( $+commands[gcloud] )); then
+  plugins+=(gcloud)
 fi
 
 source "${ZSH}/oh-my-zsh.sh"
