@@ -126,8 +126,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-source "${ZSH}/oh-my-zsh.sh"
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -148,6 +146,8 @@ fi
 if [[ $+commands[az] && -f ${HOMEBREW_DIR}/etc/bash_completion.d/az ]]; then
   source ${HOMEBREW_DIR}/etc/bash_completion.d/az
 fi
+
+source "${ZSH}/oh-my-zsh.sh"
 
 if (( $+commands[tfenv] || $+commands[terraform] )); then
   complete -o nospace -C ${HOMEBREW_DIR}/bin/terraform terraform
