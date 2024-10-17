@@ -151,6 +151,11 @@ if (( $+commands[gcloud] )); then
   plugins+=(gcloud)
 fi
 
+if (( $+commands[zoxide] )); then
+  ZOXIDE_CMD_OVERRIDE=j
+  plugins+=(zoxide)
+fi
+
 if [[ "$OSTYPE" =~ "darwin" ]]; then
   zstyle :omz:plugins:iterm2 shell-integration yes
   plugins+=(iterm2)
@@ -173,8 +178,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-eval "$(zoxide init zsh --cmd j)"
 
 export GOPATH="${HOME}/go"
 
