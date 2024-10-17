@@ -151,6 +151,11 @@ if (( $+commands[gcloud] )); then
   plugins+=(gcloud)
 fi
 
+if [[ "$OSTYPE" =~ "darwin" ]]; then
+  zstyle :omz:plugins:iterm2 shell-integration yes
+  plugins+=(iterm2)
+fi
+
 source "${ZSH}/oh-my-zsh.sh"
 
 if (( $+commands[tfenv] || $+commands[terraform] )); then
@@ -168,10 +173,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-if [[ "$OSTYPE" =~ "darwin" && -f ~/.iterm2_shell_integration.zsh ]]; then
-  source ~/.iterm2_shell_integration.zsh
-fi
 
 eval "$(zoxide init zsh --cmd j)"
 

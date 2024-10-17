@@ -2,7 +2,6 @@ install:
 	cp zshrc ~/.zshrc
 	cp p10k.zsh ~/.p10k.zsh
 	cp aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
-	cp iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
 	cp gitconfig ~/.gitconfig
 	cp gitconfig-mac ~/.gitconfig-mac
 	cp gitconfig-linux ~/.gitconfig-linux
@@ -16,7 +15,6 @@ diff:
 	-diff zshrc ~/.zshrc
 	-diff p10k.zsh ~/.p10k.zsh
 	-diff aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
-	-diff iterm2_shell_integration.zsh ~/.iterm2_shell_integration.zsh
 	-diff gitconfig ~/.gitconfig
 	-diff gitconfig-mac ~/.gitconfig-mac
 	-diff gitconfig-linux ~/.gitconfig-linux
