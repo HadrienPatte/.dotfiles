@@ -183,3 +183,29 @@ export GOPATH="${HOME}/go"
 
 # Add binaries that are go install-ed to PATH
 export PATH="${GOPATH}/bin:${PATH}"
+
+
+# The following ensure a separate kube config per active shell
+# TMPDIR is not always defined on Linux
+TMPDIR="${TMPDIR:-/tmp}"
+
+# Contexts stored in ~/.kube/config serve as a template
+if [ ! -e ~/.kube/config ]; then
+    mkdir ~/.kube
+    touch ~/.kube/config
+fi
+
+# Don't touch existing config in case we're re-sourcing
+if [ -z "${KUBECONFIG}" ]; then
+    export KUBECONFIG="$(mktemp ${TMPDIR}/.kube.XXXXXXXXX)"
+    cat ~/.kube/config >>${KUBECONFIG}
+fi
+
+kubeconfig-zshexit-hook() {
+    if [[ "${KUBECONFIG}" != $HOME/.kube/kind-config-kind && ! "${KUBECONFIG}" =~ "${HOME}/protected/.*" ]]; then
+        rm -f ${KUBECONFIG}
+    fi
+}
+zshexit_functions+=(kubeconfig-zshexit-hook)
+
+alias kl-unset='truncate -s 0 ${KUBECONFIG} && cat ~/.kube/config >> ${KUBECONFIG}'
