@@ -151,6 +151,10 @@ if (( $+commands[gcloud] )); then
   plugins+=(gcloud)
 fi
 
+if (( $+commands[fzf] )); then
+  plugins+=(fzf)
+fi
+
 if (( $+commands[zoxide] )); then
   ZOXIDE_CMD_OVERRIDE=j
   plugins+=(zoxide)
