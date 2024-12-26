@@ -134,8 +134,8 @@ plugins=(
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if (( $+commands[vim] )); then
-  VISUAL=vim
+if (( $+commands[lvim] )); then
+  VISUAL=lvim
   EDITOR=$VISUAL
 fi
 

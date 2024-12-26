@@ -36,6 +36,7 @@
 	insteadOf = https://github.com/
 
 [core]
+	editor = lvim
 	pager = delta
 	hooksPath = ~/.dotfiles/git-hooks
 

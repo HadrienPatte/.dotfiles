@@ -1,5 +1,6 @@
 # grep aliases
-alias grep='grep --color=auto --exclude-dir=.git'
+alias grep='grep --color=auto --exclude-dir={.git,.terraform,.terragrunt-cache,.bazel-disk-cache,"bazel-*"}'
+alias gerp='grep'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
@@ -20,8 +21,8 @@ alias kx='kubectx'
 alias e='exit'
 alias ssu='sudo -sE'
 alias h='history'
-alias tf='terraform'
 alias o='f -e xdg-open'
+alias vim=lvim
 
 # Git aliases
 alias g='git'

@@ -5,9 +5,7 @@ install: diff
 	cp gitconfig ~/.gitconfig
 	cp gitconfig-mac ~/.gitconfig-mac
 	cp gitconfig-linux ~/.gitconfig-linux
-	mkdir -p ~/.SpaceVim.d/autoload
-	cp spacevim-init.toml ~/.SpaceVim.d/init.toml
-	cp myspacevim.vim ~/.SpaceVim.d/autoload/myspacevim.vim
+	cp lvim.config.lua ~/.config/lvim/config.lua
 	mkdir -p ~/.terraform.d/plugin-cache
 	cp terraformrc ~/.terraformrc
 
@@ -18,11 +16,10 @@ diff:
 	-diff gitconfig ~/.gitconfig
 	-diff gitconfig-mac ~/.gitconfig-mac
 	-diff gitconfig-linux ~/.gitconfig-linux
-	-diff spacevim-init.toml ~/.SpaceVim.d/init.toml
-	-diff myspacevim.vim ~/.SpaceVim.d/autoload/myspacevim.vim
+	-diff lvim.config.lua ~/.config/lvim/config.lua
 	-diff terraformrc ~/.terraformrc
 
-deps: oh-my-zsh powerlevel10k zsh-autosuggestions zsh-syntax-highlighting spacevim
+deps: oh-my-zsh powerlevel10k zsh-autosuggestions zsh-syntax-highlighting lunarvim
 
 oh-my-zsh:
 ifeq (,$(wildcard ~/.oh-my-zsh))
@@ -64,12 +61,12 @@ else
 endif
 	@echo
 
-spacevim:
-ifeq (,$(wildcard ~/.SpaceVim))
+lunarvim:
+ifeq (,$(wildcard ~/.local/share/lunarvim/lvim))
 	@echo "Install $@"
-	@curl -sLf https://spacevim.org/install.sh | bash
+	@bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh)
 else
 	@echo "Update $@"
-	@cd ~/.SpaceVim && git fetch && git pull
+	@cd ~/.local/share/lunarvim/lvim && git fetch && git pull
 endif
 	@echo

@@ -5,9 +5,9 @@
 * zsh
 * git
 * [delta](https://github.com/dandavison/delta)
-* [powerlevel10k font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k)
+* [nerd font](https://www.nerdfonts.com/)
 * [zoxide](https://github.com/ajeetdsouza/zoxide/blob/main/README.md#installation)
-* vim
+* neovim
 
 ## Dependencies
 
