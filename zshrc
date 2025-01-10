@@ -26,19 +26,13 @@ if [[ "$OSTYPE" =~ "darwin" ]]; then
   if [ -x "$(command -v ${HOMEBREW_DIR}/bin/brew)" ]; then
     export FPATH="${HOMEBREW_DIR}/share/zsh/site-functions:${FPATH}"
 
+    export PATH="${HOMEBREW_DIR}/bin:${PATH}"
+    export PATH="${HOMEBREW_DIR}/sbin:${PATH}"
+
     # Force certain more-secure behaviors from homebrew
     export HOMEBREW_NO_INSECURE_REDIRECT=1
     export HOMEBREW_CASK_OPTS=--require-sha
 
-    # Prefer GNU binaries to Macintosh binaries.
-    export PATH="${HOMEBREW_DIR}/bin:${PATH}"
-    export PATH="${HOMEBREW_DIR}/sbin:${PATH}"
-    export PATH="${HOMEBREW_DIR}/opt/coreutils/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_DIR}/opt/findutils/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_DIR}/opt/grep/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_DIR}/opt/gnu-sed/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_DIR}/opt/make/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_DIR}/opt/awscli@1/bin:${PATH}"
   fi
 fi
 
@@ -163,6 +157,9 @@ fi
 if [[ "$OSTYPE" =~ "darwin" ]]; then
   zstyle :omz:plugins:iterm2 shell-integration yes
   plugins+=(iterm2)
+  # make sure to install the following packages:
+  # brew install coreutils findutils gnu-sed gnu-tar make grep
+  plugins+=(gnu-utils)
 fi
 
 source "${ZSH}/oh-my-zsh.sh"
