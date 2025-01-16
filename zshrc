@@ -129,8 +129,8 @@ plugins=(
 
 # Preferred editor for local and remote sessions
 if (( $+commands[lvim] )); then
-  VISUAL=lvim
-  EDITOR=$VISUAL
+  export VISUAL=lvim
+  export EDITOR=$VISUAL
 fi
 
 if (( $+commands[aws] )); then
