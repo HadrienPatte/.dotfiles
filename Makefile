@@ -6,6 +6,7 @@ install: diff
 	cp gitconfig-mac ~/.gitconfig-mac
 	cp gitconfig-linux ~/.gitconfig-linux
 	cp lvim.config.lua ~/.config/lvim/config.lua
+	cp ghostty.ini ~/.config/ghostty/config
 	mkdir -p ~/.terraform.d/plugin-cache
 	cp terraformrc ~/.terraformrc
 
@@ -17,6 +18,7 @@ diff:
 	-diff gitconfig-mac ~/.gitconfig-mac
 	-diff gitconfig-linux ~/.gitconfig-linux
 	-diff lvim.config.lua ~/.config/lvim/config.lua
+	-diff ghostty.ini ~/.config/ghostty/config
 	-diff terraformrc ~/.terraformrc
 
 deps: oh-my-zsh powerlevel10k zsh-autosuggestions zsh-syntax-highlighting lunarvim

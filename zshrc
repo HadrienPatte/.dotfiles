@@ -155,8 +155,6 @@ if (( $+commands[zoxide] )); then
 fi
 
 if [[ "$OSTYPE" =~ "darwin" ]]; then
-  zstyle :omz:plugins:iterm2 shell-integration yes
-  plugins+=(iterm2)
   # make sure to install the following packages:
   # brew install coreutils findutils gnu-sed gnu-tar make grep
   plugins+=(gnu-utils)
