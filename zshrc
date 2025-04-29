@@ -113,7 +113,6 @@ plugins=(
   git
   git-auto-fetch
   colored-man-pages
-  direnv
   virtualenvwrapper
   command-not-found
   zsh-autosuggestions
@@ -143,6 +142,10 @@ fi
 
 if (( $+commands[gcloud] )); then
   plugins+=(gcloud)
+fi
+
+if (( $+commands[direnv] )); then
+  plugins+=(direnv)
 fi
 
 if (( $+commands[fzf] )); then
