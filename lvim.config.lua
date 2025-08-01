@@ -11,6 +11,13 @@ lvim.autocommands = {
             command = [[if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif]],
         }
     },
+    { -- Detect Helm template files and set appropriate filetype
+        { "BufRead", "BufNewFile" },
+        {
+            pattern = { "*/templates/*.yaml", "*/templates/*.yml" },
+            command = "set filetype=helm",
+        }
+    },
 }
 
 lvim.builtin.gitsigns.opts.current_line_blame = true
