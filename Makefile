@@ -9,6 +9,8 @@ install: diff
 	cp ghostty.ini ~/.config/ghostty/config
 	mkdir -p ~/.terraform.d/plugin-cache
 	cp terraformrc ~/.terraformrc
+	mkdir -p ~/.claude
+	cp claude-settings.json ~/.claude/settings.json
 
 diff:
 	-diff zshrc ~/.zshrc
@@ -20,6 +22,7 @@ diff:
 	-diff lvim.config.lua ~/.config/lvim/config.lua
 	-diff ghostty.ini ~/.config/ghostty/config
 	-diff terraformrc ~/.terraformrc
+	-diff claude-settings.json ~/.claude/settings.json
 
 deps: oh-my-zsh powerlevel10k zsh-autosuggestions zsh-syntax-highlighting lunarvim
 
