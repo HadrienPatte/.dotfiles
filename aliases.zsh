@@ -1,5 +1,5 @@
 # grep aliases
-alias grep='grep --color=auto --exclude-dir={.git,.terraform,.terragrunt-cache,.bazel-disk-cache,"bazel-*"}'
+alias grep='grep --color=auto --exclude-dir={.git,.terraform,.terragrunt-cache,.bazel-disk-cache,"bazel-*",vendor}'
 alias gerp='grep'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
