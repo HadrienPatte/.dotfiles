@@ -2,17 +2,30 @@
     "$schema": "https://json.schemastore.org/claude-code-settings.json",
     "permissions": {
         "allow": [
-            "Bash(go mod:*)",
-            "Bash(go list:*)",
-            "Bash(go doc:*)",
-            "Bash(go get:*)",
+            "Bash(cargo build:*)",
+            "Bash(cargo check:*)",
+            "Bash(cargo clippy:*)",
+            "Bash(crane manifest:*)",
             "Bash(go build:*)",
-            "Bash(go vet:*)",
+            "Bash(go doc:*)",
+            "Bash(go fmt:*)",
+            "Bash(go get:*)",
+            "Bash(go list:*)",
+            "Bash(go mod:*)",
             "Bash(go test:*)",
+            "Bash(go vet:*)",
             "Bash(git log:*)",
-            "Bash(crane manifest:*)"
+            "Bash(gls:*)",
+            "Bash(gofmt:*)",
+            "Bash(goimports:*)",
+            "Bash(golangci-lint run:*)"
         ],
         "deny": [],
         "ask": []
+    },
+    "enabledPlugins": {
+        "gopls-lsp@claude-plugins-official": true,
+        "clangd-lsp@claude-plugins-official": true,
+        "rust-analyzer-lsp@claude-plugins-official": true
     }
 }
