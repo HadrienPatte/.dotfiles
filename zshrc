@@ -113,7 +113,6 @@ plugins=(
   git
   git-auto-fetch
   colored-man-pages
-  virtualenvwrapper
   command-not-found
   zsh-autosuggestions
   zsh-syntax-highlighting
