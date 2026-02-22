@@ -210,3 +210,43 @@ kubeconfig-zshexit-hook() {
 zshexit_functions+=(kubeconfig-zshexit-hook)
 
 alias kl-unset='truncate -s 0 ${KUBECONFIG} && cat ~/.kube/config >> ${KUBECONFIG}'
+
+kubectl() {
+  local has_yaml=0 has_json=0 has_sort_by=0 is_get=0
+  local args=("$@")
+  local i next
+
+  for i in "${args[@]}"; do
+    case "$i" in
+      get) is_get=1 ;;
+      --sort-by|--sort-by=*) has_sort_by=1 ;;
+      -oyaml|--output=yaml) has_yaml=1 ;;
+      -ojson|--output=json) has_json=1 ;;
+    esac
+  done
+
+  if [[ $has_yaml -eq 0 && $has_json -eq 0 ]]; then
+    for ((i=0; i < ${#args[@]}; i++)); do
+      if [[ "${args[$i]}" == "-o" || "${args[$i]}" == "--output" ]]; then
+        next=$((i + 1))
+        case "${args[$next]}" in
+          yaml) has_yaml=1 ;;
+          json) has_json=1 ;;
+        esac
+      fi
+    done
+  fi
+
+  if [[ $is_get -eq 1 && $has_sort_by -eq 0 ]]; then
+    args+=(--sort-by=.metadata.creationTimestamp)
+  fi
+
+  if [[ $has_yaml -eq 1 ]] && [[ -t 1 ]]; then
+    command kubectl "${args[@]}" | bat --language=yaml --style=plain
+  elif [[ $has_json -eq 1 ]] && [[ -t 1 ]]; then
+    command kubectl "${args[@]}" | jq
+  else
+    command kubectl "${args[@]}"
+  fi
+}
+
