@@ -11,7 +11,6 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # Kubernetes aliases
-alias d='docker'
 alias dc='docker compose'
 alias k='kubectl'
 alias kn='kubens'
@@ -23,6 +22,7 @@ alias ssu='sudo -sE'
 alias h='history'
 alias o='f -e xdg-open'
 alias vim=lvim
+alias sed='sed --follow-symlinks'
 
 # Git aliases
 alias g='git'
