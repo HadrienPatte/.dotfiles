@@ -39,6 +39,18 @@ lvim.plugins = {
             vim.defer_fn(function()
                 require("copilot").setup()     -- https://github.com/zbirenbaum/copilot.lua/blob/master/README.md#setup-and-configuration
                 require("copilot_cmp").setup() -- https://github.com/zbirenbaum/copilot-cmp/blob/master/README.md#configuration
+
+                -- copilot-cmp calls the deprecated dot-form `client.is_stopped()`, which warns on every keystroke in insert mode.
+                -- Override with the colon form, all sources share this table via __index.
+                require("copilot_cmp.source").is_available = function(self)
+                    if self.client:is_stopped() or self.client.name ~= "copilot" then
+                        return false
+                    end
+                    return next(vim.lsp.get_clients({
+                        bufnr = vim.api.nvim_get_current_buf(),
+                        id = self.client.id,
+                    })) ~= nil
+                end
             end, 100)
         end,
     }
