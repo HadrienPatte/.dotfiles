@@ -24,7 +24,7 @@ diff:
 	-diff terraformrc ~/.terraformrc
 	-diff claude-settings.json ~/.claude/settings.json
 
-deps: oh-my-zsh powerlevel10k zsh-autosuggestions zsh-syntax-highlighting lunarvim
+deps: oh-my-zsh powerlevel10k lunarvim
 
 oh-my-zsh:
 ifeq (,$(wildcard ~/.oh-my-zsh))
@@ -43,26 +43,6 @@ ifeq (,$(wildcard ~/.oh-my-zsh/custom/themes/powerlevel10k))
 else
 	@echo "Update $@"
 	@cd ~/.oh-my-zsh/custom/themes/powerlevel10k && git fetch && git pull
-endif
-	@echo
-
-zsh-autosuggestions:
-ifeq (,$(wildcard ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions))
-	@echo "Install $@"
-	@git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-else
-	@echo "Update $@"
-	@cd ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions && git fetch && git pull
-endif
-	@echo
-
-zsh-syntax-highlighting:
-ifeq (,$(wildcard ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting))
-	@echo "Install $@"
-	@git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-else
-	@echo "Update $@"
-	@cd ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting && git fetch && git pull
 endif
 	@echo
 
